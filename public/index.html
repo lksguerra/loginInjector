@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login injector Decrypt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Login injector by Decrypt</h1>
+    <form id="uploadForm">
+      <label for="fileInput">Selecione um arquivo:</label>
+      <input type="file" id="fileInput" name="file" accept=".txt" required>
+
+      <label for="htmlLogin">Seletor de Login:</label>
+      <input type="text" id="htmlLogin" name="htmlLogin" placeholder="Exemplo: email" required>
+
+      <label for="htmlPassword">Seletor de Senha:</label>
+      <input type="text" id="htmlPassword" name="htmlPassword" placeholder="Exemplo: password" required>
+
+      <label for="htmlForm">Seletor do Botão:</label>
+      <input type="text" id="htmlForm" name="htmlForm" placeholder="Exemplo: submit" required>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="logsContainer">
+      <h3>Logs:</h3>
+      <pre id="logs"></pre> <!-- Para exibir os logs -->
+    </div>
+    <button id="downloadButton" style="display: none;">Baixar Log de Sucesso</button>
+    <div id="results"></div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+  <script>
+    const socket = io('http://localhost:3000'); // Substitua pela URL do seu servidor
+    const logsContainer = document.getElementById('logs');
+
+    socket.on('log', (data) => {
+      const logLine = data.status === 'success'
+        ? `[SUCCESS] ${data.message}\n`
+        : `[ERROR] ${data.message}\n`;
+      logsContainer.textContent += logLine;
+    });
+  </script>
+</body>
+
+</html>

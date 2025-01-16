@@ -1,0 +1,79 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Fundo preto */
+  color: #0f0; /* Texto verde neon */
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #111; /* Fundo preto mais claro */
+  border: 2px solid #0f0; /* Borda verde neon */
+  border-radius: 8px;
+  box-shadow: 0 0 20px #0f0; /* Brilho neon */
+}
+
+h1 {
+  text-align: center;
+  color: #0f0; /* Verde neon */
+  text-shadow: 0 0 10px #0f0; /* Efeito brilhante */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, button {
+  background-color: #000; /* Preto */
+  color: #0f0; /* Verde neon */
+  border: 2px solid #0f0; /* Borda verde neon */
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #0f0; /* Placeholder verde neon */
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #0f0; /* Fundo verde neon ao passar o mouse */
+  color: #000; /* Texto preto */
+  box-shadow: 0 0 15px #0f0; /* Brilho neon ao passar o mouse */
+}
+
+#results {
+  margin-top: 20px;
+}
+
+.success {
+  color: #0f0; /* Verde neon para sucesso */
+}
+
+.error {
+  color: #f00; /* Vermelho para erro */
+}
+
+#logsContainer {
+  max-height: 400px;
+  overflow-y: auto; 
+  border: 1px solid #0f0;
+  padding: 10px;
+  background-color: #111010;
+}
+
+#logs {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
